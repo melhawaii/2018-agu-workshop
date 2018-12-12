@@ -24,6 +24,12 @@ def download_data(location):
 
 
 def moving_average(data,width):
+    """
+    computes the moving average.
+
+    data: input data array.
+    width: 1/2 of moving average window
+    """
     moving_avg = np.full(data.size, np.nan)
     for i in range(width, moving_avg.size - width):
         moving_avg[i] = np.mean(data[i - width:i + width])
